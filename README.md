@@ -27,6 +27,9 @@ Change the file name from localcred.json to credentials.json
 var manual = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));    
 ```
 
+
+Follow instructions for [Bluemix network setup](https://github.com/IBM-Blockchain/marbles/blob/master/tutorial_part1.md#manual-network-setup)
+
 # Workflow
 Once the network is in place, kickoff the application by executing the following:
 
