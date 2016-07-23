@@ -91,12 +91,12 @@ var options = {
         options: {quiet: true, tls:false, maxRetry: 1}
     },
     chaincode: {
-        //zip_url: 'https://github.com/ITPeople-Blockchain/auction/archive/master.zip',
-        //unzip_dir: 'auction-master/art/artchaincode',
-        //git_url: 'https://github.com/ITPeople-Blockchain/auction/art/artchaincode'
-        zip_url: 'https://github.com/ratnakar-asara/artcc/archive/master.zip',
-        unzip_dir: 'artcc-master/',
-        git_url: 'https://github.com/ratnakar-asara/artcc'
+        zip_url: 'https://github.com/ITPeople-Blockchain/auction/archive/master.zip',
+        unzip_dir: 'auction-master/art/artchaincode',
+        git_url: 'https://github.com/ITPeople-Blockchain/auction/art/artchaincode'
+        //zip_url: 'https://github.com/ratnakar-asara/artcc/archive/master.zip',
+        //unzip_dir: 'artcc-master/',
+        //git_url: 'https://github.com/ratnakar-asara/artcc'
     }
 };
 
