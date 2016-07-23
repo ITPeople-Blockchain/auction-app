@@ -1,0 +1,69 @@
+{
+  "credentials": {
+    "peers": [
+      {
+        "discovery_host": "127.0.0.1",
+        "discovery_port": 5000,
+        "api_host": "127.0.0.1",
+        "api_port_tls": 5000,
+        "api_port": 5000,
+        "type": "peer",
+        "network_id": "f79d37aa-df29-4c35-93f5-1c49e980e220",
+        "container_id": "a61522a01488e4371abc13422cfe0f1e81fcb3596026dc6dfb71ff26c7f2925d",
+        "id": "PEER0",
+        "api_url": "http://127.0.0.1:5000"
+      },
+      {
+        "discovery_host": "127.0.0.1",
+        "discovery_port": 5000,
+        "api_host": "127.0.0.1",
+        "api_port_tls": 5000,
+        "api_port": 5000,
+        "type": "peer",
+        "network_id": "f79d37aa-df29-4c35-93f5-1c49e980e220",
+        "container_id": "a61522a01488e4371abc13422cfe0f1e81fcb3596026dc6dfb71ff26c7f2925d",
+        "id": "PEER1",
+        "api_url": "http://127.0.0.1:5000"
+      }
+    ],
+    "ca": {
+      "f79d37aa-df29-4c35-93f5-1c49e980e220_ca": {
+        "url": "f79d37aa-df29-4c35-93f5-1c49e980e220_ca-api.blockchain.ibm.com:30303",
+        "discovery_host": "f79d37aa-df29-4c35-93f5-1c49e980e220_ca-discovery.blockchain.ibm.com",
+        "discovery_port": 30303,
+        "api_host": "f79d37aa-df29-4c35-93f5-1c49e980e220_ca-api.blockchain.ibm.com",
+        "api_port_tls": 30303,
+        "api_port": 80,
+        "type": "ca",
+        "network_id": "f79d37aa-df29-4c35-93f5-1c49e980e220",
+        "container_id": "4a06f8091b77ab7027ad1e61a34ad177f5c164be36d7784518c649b15a6fa603"
+      }
+    },
+    "users": [
+      {
+        "username": "test_user0",
+        "secret": "MS9qrN8hFjlE",
+        "enrollId": "test_user0",
+        "enrollSecret": "MS9qrN8hFjlE"
+      },
+      {
+        "username": "test_user1",
+        "secret": "jGlNl6ImkuDo",
+        "enrollId": "test_user1",
+        "enrollSecret": "jGlNl6ImkuDo"
+      },
+      {
+        "username": "test_user2",
+        "secret": "zMflqOKezFiA",
+        "enrollId": "test_user2",
+        "enrollSecret": "zMflqOKezFiA"
+      },
+      {
+        "username": "test_user3",
+        "secret": "vWdLCE00vJy0",
+        "enrollId": "test_user3",
+        "enrollSecret": "vWdLCE00vJy0"
+      }
+    ]
+  }
+}
