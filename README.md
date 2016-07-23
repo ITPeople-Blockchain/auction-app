@@ -87,20 +87,22 @@ Transfer button. Updated details can be seen from Detail View of the Asset.
   - No User validation checks in UI screens like **Transfer Asset** and **Bid On Asset**
   - No indication in UI about Bid Price submitted or Ignore by backend/chaincode
   
-### Problems
-  - EventListener support not available to check whether a transaction is successful or failed, there is an extra burden on the client, as it has to check for the same with multiple REST calls.
-
-## Troubleshoot
-When used local network,ibm-blockcahin-js library is failed to register users with membership service
+### Troubleshoot
+When local network is used, ibm-blockcahin-js library is failed to register users with membership service
 
 ```
 [ibc-js] No membership users found after filtering, assuming this is a network w/o membership
 ```
 
-As a work around, Comment 101 line in node_modules/ibm-blockchain-js/index.js
+As a work around, Comment 101 line in node_modules/ibm-blockchain-js/index.js as shown below
 ```
-//options.network.users = helper.filter_users(options.network.users);
+	// Step 2 - optional - only for secure networks
+	if(options.network.users){
+		//options.network.users = helper.filter_users(options.network.users);			//only use the appropriate IDs filter out the rest
+	}
 ```
+
+### Problems
+  - EventListener support not available to check whether a transaction is successful or failed, there is an extra burden on the client, as it has to check for the same with multiple REST calls.
 
 ### Future Work
-
