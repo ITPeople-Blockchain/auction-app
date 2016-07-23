@@ -30,6 +30,8 @@ var manual = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
 
 Follow instructions for [Bluemix network setup](https://github.com/IBM-Blockchain/marbles/blob/master/tutorial_part1.md#manual-network-setup)
 
+Follow instructions [here](https://console.ng.bluemix.net/docs/starters/install_cli.html) for deploying your application.
+
 # Workflow
 Once the network is in place, kickoff the application by executing the following:
 
