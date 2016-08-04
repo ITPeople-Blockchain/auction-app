@@ -7,8 +7,8 @@ Install the dependent libraries using below command
     npm install <lib>
     
     $ npm install express
-    $ npm install express
-    $ npm install express
+    $ npm install cors
+    $ npm install ibm-blockchain-js
 ```
 
 ## Fabric
