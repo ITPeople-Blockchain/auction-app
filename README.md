@@ -139,7 +139,7 @@ When used local network,ibm-blockcahin-js library is failed to register users wi
 [ibc-js] No membership users found after filtering, assuming this is a network w/o membership
 ```
 
-As a work around, Comment 101 line in node_modules/ibm-blockchain-js/index.js
+As a work around, Comment 101 line in **node_modules/ibm-blockchain-js/index.js**
 ```
 //options.network.users = helper.filter_users(options.network.users);
 ```
