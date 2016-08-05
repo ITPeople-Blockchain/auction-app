@@ -7,60 +7,30 @@ Install the dependent libraries using below command
     npm install <lib>
     
     $ npm install express
-    $ npm install cors
-    $ npm install ibm-blockchain-js
+    $ npm install express
+    $ npm install express
 ```
 
-##Run application with local setup
-Installation of fabric is necessary if you want to create local network and execute the auction application on local network.
-### Fabric Setup
-Please review instructions on setting up the [Development Environment](https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/devenv.md) and [Chaincode Setup](https://github.com/hyperledger/fabric/blob/master/docs/Setup/Chaincode-setup.md)
+## Fabric
+Please review instructions on setting up the [Development Environment](https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/devenv.md).
+Follow the [network setup](https://github.com/hyperledger/fabric/blob/master/docs/Setup/Network-setup.md) steps.
 
-Start your peer and membersrvc from vagrant
-####Terminal-1
-```
-$ cd /opt/gopath/src/github.com/hyperledger/fabric/
-$ membersrvc
-```
-####Terminal-2
-```
-$ cd /opt/gopath/src/github.com/hyperledger/fabric/
-$ CORE_SECURITY_ENABLED=true CORE_SECURITY_PRIVACY=true peer node start
-```
+The installation of this is only necessary if you would like to create local network and execute the auction application using that network, Otherwise you can use [Bluemix](https://console.ng.bluemix.net/ ) service which provides 4 peer network along with membership service
 
-Follow the [network setup](https://github.com/hyperledger/fabric/blob/master/docs/Setup/Network-setup.md) steps to create your local network.
-
-### Credentials
-Default credentials are read from localcreds.json, check the below snippet from app.js
+## Credentials
+If you are using [Bluemix service](https://console.ng.bluemix.net/), use the Credentials available from Bluemix service.
+Update credentails.json with new values and replace localcreds.json with credentails.json file in app.js
 
 ```
-try {
-    // update credentials.json if you want to use Bluemix credentails from local machine
-    //var manual = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
+Change the file name from localcred.json to credentials.json
     
-    // update localcreds.json with your local network
-    var manual = JSON.parse(fs.readFileSync('localcreds.json', 'utf8'));
-    var peers = manual.credentials.peers;
-```
-update credentails in localcreds.json as per your network setup 
-
-##Run application from local machine using Bluemix network
- 
- [Bluemix](https://console.ng.bluemix.net/ ) service provides 4 peer network along with membership service, Follow instructions [here](https://github.com/IBM-Blockchain/marbles/blob/master/tutorial_part1.md#manual-bluemix-network) for Bluemix network setup
-
-### Credentials
-If you are using [Bluemix service](https://console.ng.bluemix.net/), Update credentials obtained from above step in credentails.json file in app.js and update the code as shown below
-
-```
-try {
-    // update credentials.json if you want to use Bluemix credentails from local machine
-    var manual = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
-    
-    // update localcreds.json with your local network
-    //var manual = JSON.parse(fs.readFileSync('localcreds.json', 'utf8'));
-    var peers = manual.credentials.peers;
+var manual = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));    
 ```
 
+
+Follow instructions for [Bluemix network setup](https://github.com/IBM-Blockchain/marbles/blob/master/tutorial_part1.md#manual-network-setup)
+
+Follow instructions [here](https://console.ng.bluemix.net/docs/starters/install_cli.html) for deploying your application.
 
 # Workflow
 Once the network is in place, kickoff the application by executing the following:
@@ -78,12 +48,7 @@ You will need to wait upto 1 minute before the application is fully deployed. Th
 [d2cbc1ac45ee62c4acbca98e7d33ea5ae2771a37262678f15170285be979cbcf1addf3af79602f2f6c3da2f3846426419adaa838f636ce62668f3199edaab5c0]
 ```
 
-###Deploy Application in Bluemix
-Alternatively, You can deploy Auction application and network at once on Bluemix, Click [here](https://hub.jazz.net/deploy/index.html?repository=https://github.com/ITPeople-Blockchain/auction-app.git) for the same and follow instructions.
-
-
-Now you can point your browser at **http://localhost:3000** or application link from bluemix and you can see the auction home page as below :
-
+Now you can point your browser at **http://localhost:3000** and you can see the auction homepage:
 
 ![alt tag](home_page.png)
 
@@ -122,27 +87,27 @@ Once Auction is closed updated details can be seen on Asset Details view.
 Click on **"Actions" -> "Transfer Asset"**. An asset can be transferred by entering existing user id and clicking on the 
 Transfer button. Updated details can be seen from Detail View of the Asset.
 
-
-
 ### Known Issues
   - No Form Field validations
   - No User validation checks in UI screens like **Transfer Asset** and **Bid On Asset**
   - No indication in UI about Bid Price submitted or Ignore by backend/chaincode
   
-### Problems
-  - EventListener support not available to check whether a transaction is successful or failed, there is an extra burden on the client, as it has to check for the same with multiple REST calls.
-
-## Troubleshoot
-When used local network,ibm-blockcahin-js library is failed to register users with membership service
+### Troubleshoot
+When local network is used, ibm-blockcahin-js library is failed to register users with membership service
 
 ```
 [ibc-js] No membership users found after filtering, assuming this is a network w/o membership
 ```
 
-As a work around, Comment 101 line in **node_modules/ibm-blockchain-js/index.js**
+As a work around, Comment 101 line in node_modules/ibm-blockchain-js/index.js as shown below
 ```
-//options.network.users = helper.filter_users(options.network.users);
+	// Step 2 - optional - only for secure networks
+	if(options.network.users){
+		//options.network.users = helper.filter_users(options.network.users);			//only use the appropriate IDs filter out the rest
+	}
 ```
+
+### Problems
+  - EventListener support not available to check whether a transaction is successful or failed, there is an extra burden on the client, as it has to check for the same with multiple REST calls.
 
 ### Future Work
-
