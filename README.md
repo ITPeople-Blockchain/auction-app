@@ -88,7 +88,7 @@ Now you can point your browser at **http://localhost:3000** or application link 
 ![alt tag](home_page.png)
 
 
-## Register a user on blcokchain
+## Register a user on blockchain
 Register multiple users by clicking on "Create Account". 
 
 For a quickstart execute in DEV mode, there is a script [PostUser](https://github.com/ITPeople-Blockchain/auction/blob/master/art/scripts/PostUsers) available.
