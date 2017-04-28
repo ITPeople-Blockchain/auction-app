@@ -79,7 +79,7 @@ You will need to wait upto 1 minute before the application is fully deployed. Th
 ```
 
 ###Deploy Application in Bluemix
-Alternatively, You can deploy Auction application and network at once on Bluemix, Click [here](https://hub.jazz.net/deploy/index.html?repository=https://github.com/ITPeople-Blockchain/auction-app.git) for the same and follow instructions.
+Alternatively, You can deploy Auction application and network at once on Bluemix, Click [here](https://bluemix.net/deploy?repository=https://github.com/ITPeople-Blockchain/auction-app.git) for the same and follow instructions.
 
 
 Now you can point your browser at **http://localhost:3000** or application link from bluemix and you can see the auction home page as below :
