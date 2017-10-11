@@ -1,4 +1,4 @@
-# Environment Setup
+# Environment Setup.
 ## Node JS
 1. [Node.js](https://nodejs.org/en/download/) 0.12.0+ and npm v2+ (needed nodejs if you want to run the app locally, npm comes with node.js)
 ### Dependencies
