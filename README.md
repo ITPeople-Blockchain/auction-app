@@ -1,4 +1,4 @@
-# Environment Setup
+# Environment Setup.
 ## Node JS
 1. [Node.js](https://nodejs.org/en/download/) 0.12.0+ and npm v2+ (needed nodejs if you want to run the app locally, npm comes with node.js)
 ### Dependencies
@@ -88,7 +88,7 @@ Now you can point your browser at **http://localhost:3000** or application link 
 ![alt tag](home_page.png)
 
 
-## Register a user on blcokchain
+## Register a user on blockchain
 Register multiple users by clicking on "Create Account". 
 
 For a quickstart execute in DEV mode, there is a script [PostUser](https://github.com/ITPeople-Blockchain/auction/blob/master/art/scripts/PostUsers) available.
